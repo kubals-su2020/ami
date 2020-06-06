@@ -6,7 +6,8 @@
   "subnet_id":"",
   "source_ami":"",
   "ssh_username": "",
-  "ami_name":""
+  "ami_name":"",
+  "ami_users":""
 },
   "builders": [
     {
@@ -20,6 +21,7 @@
       "ssh_username": "{{user `ssh_username`}}",
       "ami_name": "{{user `ami_name`}}_{{timestamp}}",
       "ami_description": "ami for assignment 4",
+      "ami_users":"{{user `ami_users`}}",
       "launch_block_device_mappings": [
         {
           "device_name": "/dev/sda1",
