@@ -18,7 +18,7 @@
       "source_ami": "{{user `source_ami`}}",
       "instance_type": "t2.micro",
       "ssh_username": "{{user `ssh_username`}}",
-      "ami_name": "{{user `ami_name`}}",
+      "ami_name": "{{user `ami_name`}}_{{timestamp}}",
       "ami_description": "ami for assignment 4",
       "launch_block_device_mappings": [
         {
