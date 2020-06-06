@@ -1,0 +1,31 @@
+version: 2
+jobs:
+  validate:
+    docker:
+      - image: hashicorp/packer:1.1.1
+    working_directory: ~/ami
+    steps:
+      - checkout
+      - run:
+          name: Validate ami
+          command: source validateAmi.sh
+  build-ami:
+    docker:
+      - image: hashicorp/packer:1.1.1
+    working_directory: ~/ami
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/ami
+      - run:
+          name: Build ami
+          command: source buildAmi.sh
+          no_output_timeout: 30m
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - validate
+      - build-ami:
+          requires:
+            - validate
