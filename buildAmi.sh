@@ -1,4 +1,4 @@
-./packer build \
+packer build \
     -var 'aws_access_key=AKIAJSG4FNJOH4KPOFGA' \
     -var 'aws_secret_key=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' \
     -var 'aws_region=us-east-1' \
