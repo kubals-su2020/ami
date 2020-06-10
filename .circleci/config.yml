@@ -26,6 +26,12 @@ workflows:
   validate-and-build-ami:
     jobs:
       - validate-ami
+          branches:
+            ignore:
+              - master
       - build-ami:
+          branches:
+            ignore:
+              - master
           requires:
             - validate-ami
