@@ -41,7 +41,8 @@
         "sudo apt-get install -y nodejs",
         "sudo apt-get update",
         "sudo npm install -g http-server",
-        "sudo npm install -g @angular/cli"
+        "sudo npm install -g @angular/cli",
+        "sudo apt install unzip"
       ]
     }
   ]
