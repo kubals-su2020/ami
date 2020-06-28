@@ -42,7 +42,13 @@
         "sudo apt-get update",
         "sudo npm install -g http-server",
         "sudo npm install -g @angular/cli",
-        "sudo apt install unzip"
+        "sudo apt-get update",
+        "sudo apt-get -y install ruby",
+        "sudo apt-get -y install wget",
+        "cd /home/ubuntu",
+        "wget https://aws-codedeploy-{{user `aws_region`}}.s3.{{user `aws_region`}}.amazonaws.com/latest/install",
+        "chmod +x ./install",
+        "sudo ./install auto"
       ]
     }
   ]
