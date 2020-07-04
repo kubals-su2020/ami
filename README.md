@@ -44,4 +44,5 @@ packer build \
 
 or put this command in shell script and say buildAmi.sh and run
 source buildAmi.sh
+
  
